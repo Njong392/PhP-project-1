@@ -2,4 +2,25 @@
     background-image: url("image6.jpg");
 
 
+
+}
+
+.lead{
+    color: white;
+
+    margin: auto;
+    padding: 50px 50px 50px 50px;
+}
+
+.topic{
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
 }
