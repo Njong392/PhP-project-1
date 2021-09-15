@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Registration</title>
+    <title>Register to start surfing!</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -11,7 +11,7 @@
 <body class="body">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
     <div class="container">
-        <a href="#" class="navbar-brand mr-5"><img class="logo" src="phpstorm.png"></a>
+        <a href="#" class="navbar-brand mr-5">Howdy Turfer!</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,34 +32,79 @@
 
 </nav>
 
-
+     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-        <h4 class="topic">SURF TURF, SURF WITH US!</h4>
-        <p class="lead">
-            Plan your tours with us today, to get the maximum out of your vacation. Give your kids the touring experience
-            of a lifetime, with round boat trips, surf courses, and an overall summer of fun.
-        </p>
-                <p><a href="#" class="btn btn-primary">Get started today</a></p>
-    </div>
-    </div>
+            <div class="col-md-6" >
+    <form class="form" action="" method="POST">
 
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent text-white">Your Name</span>
 
-<div>
-    <form action="" method="POST">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <input type="text" class="form-control" placeholder="First name" name="firstname">
+                <input type="text" class="form-control" placeholder="Last name" name="lastname">
+
 
         </div>
 
+        <br><br>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent text-white">Email</span>
+
+            </div>
+            <input type="email" class="form-control" placeholder="Email" name="email">
+
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent text-white">Password</span>
+
+            </div>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+
+        </div>
+
+        <br><br>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Beach</button>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Limbe</a>
+                    <a href="#" class="dropdown-item">Kribi</a>
+                </div>
+
+            </div>
+            <input type="text" class="form-control" placeholder="Where would you like to go?" name="beach">
+
+        </div>
+
+
+
+
     </form>
+            </div>
 
 
-</div>
+            <div class="col-md-6 align-self-center">
+                <h4 class="topic">SURF TURF, SURF WITH US!</h4>
+                <p class="lead">
+                    Plan your tours with us today, to get the maximum out of your vacation. Give your kids the touring experience
+                    of a lifetime, with round boat trips, surf courses, and an overall summer of fun.
+                </p>
+                <p><a href="#" class="btn btn-outline-light ">Get started today</a></p>
+            </div>
 
 
 
+        </div>
+     </div>
 
 </body>
 </html>
