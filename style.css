@@ -5,8 +5,16 @@
 
 }
 
+.logo{
+    height: 50px;
+    width: 50px;
+}
+
 .lead{
     color: white;
+    line-height: 30px;
+    font-weight: normal;
+
 }
 
 .topic {
