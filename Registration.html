@@ -8,21 +8,27 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body class="body">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5 justify-content-center" id="navbar">
     <div class="container">
-        <a href="#" class="navbar-brand" >Howdy Turfer!</a>
+        <a href="#" class="navbar-brand" >Surf Turf</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">Login</a>
-                <a href="#" class="nav-item nav-link" >About us</a>
+                <div class="mr-4">
+               <button type="button" class="btn btn-light active">Login</button>
+                </div>
+                <div class="mr-4">
+                <button type="button" class="btn btn-outline-light">About us</button>
+                </div>
 
-            </div>
-            <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Call us</a>
+
+
+                <button type="button" class="btn btn-outline-light">Donate</button>
+
 
             </div>
 
@@ -32,6 +38,7 @@
 
 </nav>
 
+
      <div class="container">
         <div class="row">
 
@@ -39,15 +46,19 @@
                 <h4 class="topic">SURF TURF, SURF WITH US!</h4>
                 <p class="lead">
                     Plan your tours with us today, to get the maximum out of your vacation. Give your kids the touring experience
-                    of a lifetime, with round boat trips, surf courses, and an overall summer of fun.
+                    of a lifetime, with round boat trips, surf courses, and an overall summer of fun. Make your hotel reservations
+                    with us too.
                 </p>
-                <p><a href="#" class="btn btn-outline-light ">Get started today</a></p>
+                <p><a href="#" class="btn btn-outline-light font-weight-bold">Want to know more?</a></p>
             </div>
 
 
 
             <div class="col-md-6" >
+                <p class="text-white">Already have an account? <a href="#">Log right in!</a></p>
                 <form class="form" action="" method="POST">
+                    <h4 class="topic">Let's get you signed up real quick!</h4>
+                    <br>
 
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -104,7 +115,7 @@
                 <button type="button" class="btn btn-outline-light">Date of Birth</button>
 
             </div>
-            <input type="date" name="date" class=" form-control text-muted">
+            <input type="date" name="date" class="form-control">
         </div>
 
        <br><br>
@@ -113,7 +124,7 @@
                     <div class="col-sm-6">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button type="button" class="btn btn-outline-light">Number of kids</button>
+                            <button type="button" class="btn btn-outline-light">Kids</button>
 
                         </div>
                         <input type="number" class="form-control" name="children" placeholder="0">
@@ -130,6 +141,20 @@
                         <input type="number" class="form-control" name="adults" placeholder="0">
                     </div>
                     </div>
+                    </div>
+
+                    <br><br>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-outline-light font-weight-bolder" name="submit">Register</button>
+
+                            </div>
+
+                        </div>
                     </div>
 
                 </form>
