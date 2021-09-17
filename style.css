@@ -2,22 +2,26 @@
     background-image: url("pexels-pixabay-416676.jpg");
     background-size: cover;
     background-attachment: fixed;
-
 }
 
-.logo{
-    height: 50px;
-    width: 50px;
+#navbar{
+    background-color: white;
+}
+
+.navbar-brand{
+    font-weight: bolder;
+    font-family: "URW Gothic";
 }
 
 .lead{
-    color: white;
+
     line-height: 30px;
     font-weight: normal;
+    color: white;
 
 }
 
-.topic {
+.topic{
     font-weight: bold;
     font-family: sans-serif;
     color: white;
@@ -25,8 +29,8 @@
 
 .form{
     border: 1px solid beige;
-    border-radius: 7px;
+    border-radius: 9px;
     padding: 30px 30px 30px 30px;
     margin: auto;
-
 }
+
