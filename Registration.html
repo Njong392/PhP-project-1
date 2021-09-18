@@ -10,30 +10,37 @@
 </head>
 
 <body class="body">
+
+
 <nav class="navbar navbar-expand-sm mb-5 justify-content-center" id="navbar">
     <div class="container">
         <a href="Registration.html" class="navbar-brand text-dark" >Surf Turf</a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon btn btn-outline-dark active"></span>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-            <div class="navbar-nav">
-                <div class="mr-4">
-               <a href="login.html" class="btn btn-outline-primary active">Login</a>
+        <div class="justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <div class="mr-4 mb-2">
+               <a href="login.html" class="btn btn-outline-primary nav-link">Login</a>
                 </div>
-                <div class="mr-4">
-                <button type="button" class="btn btn-outline-primary">About us</button>
+                </li>
+                <li class="nav-item">
+                <div class="mr-4 mb-2">
+                <a href="#" class="btn btn-outline-primary nav-link">About us</a>
                 </div>
-
-                <button type="button" class="btn btn-outline-primary">Donate</button>
+                </li>
+                <li class="nav-item">
+                <a href="#" class="btn btn-outline-primary nav-link">Donate</a>
+                </li>
+            </ul>
 
 
             </div>
 
         </div>
 
+
     </div>
+
 
 </nav>
 
@@ -70,6 +77,17 @@
 
 
         </div>
+                    <br><br>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent text-white">Username</span>
+
+                        </div>
+                        <input type="text" class="form-control" placeholder="username" name="username">
+
+
+                    </div>
 
         <br><br>
 
@@ -90,21 +108,6 @@
 
             </div>
             <input type="password" class="form-control" placeholder="Password" name="password">
-
-        </div>
-
-        <br><br>
-
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">Beach</button>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Limbe</a>
-                    <a href="#" class="dropdown-item">Kribi</a>
-                </div>
-
-            </div>
-            <input type="text" class="form-control" placeholder="Where would you like to go?" name="beach">
 
         </div>
 
@@ -150,9 +153,9 @@
 
 
                     <div class="row">
-                        <div class="col-sm-3">
-                            <div class="input-group">
-                                <button type="submit" class="btn btn-outline-primary active font-weight-bolder" name="submit">Register</button>
+                        <div class="col-sm-12">
+                            <div class="input-group justify-content-end">
+                                <button type="submit" class="btn btn-outline-light active font-weight-bolder text-white" name="submit" id="button">Register</button>
 
                             </div>
 
@@ -166,6 +169,10 @@
 
         </div>
      </div>
+
+<br><br>
+
+
 
 </body>
 </html>
