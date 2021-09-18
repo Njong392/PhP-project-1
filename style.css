@@ -1,5 +1,5 @@
 .body{
-    background-image: url("pexels-pixabay-416676.jpg");
+    background-image: url("pexels-jess-loiterton-7502346.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -32,5 +32,9 @@
     border-radius: 9px;
     padding: 30px 30px 30px 30px;
     margin: auto;
+}
+
+#button{
+    background-color: darkturquoise;
 }
 
