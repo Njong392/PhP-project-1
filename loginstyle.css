@@ -4,9 +4,6 @@
     background-attachment: fixed;
 }
 
-#navbar{
-    background-color: white;
-}
 
 .navbar-brand{
     font-weight: bolder;
@@ -28,5 +25,5 @@
 }
 
 #button{
-    background-color: mediumturquoise;
+    background-color: darkturquoise;
 }
