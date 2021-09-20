@@ -1,3 +1,69 @@
+<?php
+
+$conn = mysqli_connect('localhost','njong', 'emy123', 'project1');
+
+if(!$conn){
+    echo 'connection successful'. mysqli_connect_error();
+}
+
+
+
+if(isset($_REQUEST['firstname'])){
+    //removes backlashes
+    $firstname = stripslashes($_REQUEST['firstname']);
+    $firstname = mysqli_real_escape_string($conn, $firstname);
+    $lastname = stripslashes($_REQUEST['lastname']);
+    $lastname = mysqli_real_escape_string($conn, $lastname);
+    $username = stripslashes($_REQUEST['username']);
+    $username = mysqli_real_escape_string($conn, $username);
+    $email = stripslashes($_REQUEST['email']);
+    $email = mysqli_real_escape_string($conn, $email);
+    $password = stripslashes($_REQUEST['password']);
+    $password = mysqli_real_escape_string($conn, $password);
+    $kids = stripslashes($_REQUEST['children']);
+    $kids = mysqli_real_escape_string($conn, $kids);
+    $adults = stripslashes($_REQUEST['adults']);
+    $adults = mysqli_real_escape_string($conn, $adults);
+    $dob = date('m-d-Y');
+
+
+    $userCheck = "SELECT * FROM  php_project_1 where username = '$username'";
+    $query= mysqli_query($conn, $userCheck);
+    $res = mysqli_num_rows($query);
+
+    $emailCheck = "SELECT * FROM  php_project_1 where email = '$email'";
+    $query1= mysqli_query($conn, $emailCheck);
+    $res1 = mysqli_num_rows($query1);
+
+
+    if($res >0 ){
+        echo 'This username already exists';
+    }
+
+    elseif ($res1 > 1){
+        echo  'This email has been taken';
+    }
+
+    else{
+        $register = "INSERT into `php_project_1` (firstname,lastname,username,email,password,kids,adults,date_of_birth) VALUES 
+('$firstname', '$lastname', '$username', '$email', '". md5($password) ."', '$kids', '$adults', '$dob')" ;
+        $regQuery = mysqli_query($conn, $register);
+        if ($regQuery) {
+            session_start();
+            $_POST['username'] = $_SESSION['username'];
+            header('Location:login.php');
+        }
+    }
+
+
+
+
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +80,13 @@
 
 <nav class="navbar navbar-expand-sm mb-5 justify-content-center bg-dark" id="navbar">
     <div class="container">
-        <a href="Registration.html" class="navbar-brand text-white" >Surf Turf</a>
+        <a href="Registration.php" class="navbar-brand text-white" >Surf Turf</a>
 
         <div class="justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <div class="mr-4 mb-2">
-               <a href="login.html" class="btn btn-outline-light nav-link">Login</a>
+               <a href="login.php" class="btn btn-outline-light nav-link">Login</a>
                 </div>
                 </li>
                 <li class="nav-item">
@@ -63,8 +129,10 @@
 
 
             <div class="col-md-6" >
-                <p class="text-white">Already have an account? <a href="login.html">Log right in!</a></p>
-                <form class="form" action="" method="POST">
+                <p class="text-white">Already have an account? <a href="login.php">Log right in!</a></p>
+
+
+                <form class="form" action="Registration.php" method="POST">
                     <h4 class="topic">Let's get you signed up real quick!</h4>
                     <br>
 
@@ -73,8 +141,8 @@
                     <span class="input-group-text bg-transparent text-white">Your Name</span>
 
                 </div>
-                <input type="text" class="form-control" placeholder="First name" name="firstname">
-                <input type="text" class="form-control" placeholder="Last name" name="lastname">
+                <input type="text" class="form-control" placeholder="First name" name="firstname" required>
+                <input type="text" class="form-control" placeholder="Last name" name="lastname" required>
 
 
         </div>
@@ -85,7 +153,7 @@
                             <span class="input-group-text bg-transparent text-white">Username</span>
 
                         </div>
-                        <input type="text" class="form-control" placeholder="username" name="username">
+                        <input type="text" class="form-control" placeholder="username" name="username" required>
 
 
                     </div>
@@ -97,7 +165,7 @@
                 <span class="input-group-text bg-transparent text-white">Email</span>
 
             </div>
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
 
         </div>
 
@@ -108,7 +176,7 @@
                 <span class="input-group-text bg-transparent text-white">Password</span>
 
             </div>
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
 
         </div>
 
@@ -119,7 +187,7 @@
                 <button type="button" class="btn btn-outline-light">Date of Birth</button>
 
             </div>
-            <input type="date" name="date" class="form-control">
+            <input type="date" name="date" class="form-control" required>
         </div>
 
        <br><br>
@@ -131,7 +199,7 @@
                             <button type="button" class="btn btn-outline-light">Kids</button>
 
                         </div>
-                        <input type="number" class="form-control" name="children" placeholder="0">
+                        <input type="number" class="form-control" name="children" placeholder="0" required>
                     </div>
                     </div>
 
@@ -144,7 +212,7 @@
                             <button type="button" class="btn btn-outline-light">Adults</button>
 
                         </div>
-                        <input type="number" class="form-control" name="adults" placeholder="0">
+                        <input type="number" class="form-control" name="adults" placeholder="0" required>
                     </div>
                     </div>
                     </div>
