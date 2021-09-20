@@ -1,10 +1,3 @@
-<?php
-
-session_start();
-$name = $_SESSION['username'];
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,13 +12,13 @@ $name = $_SESSION['username'];
 
 <nav class="navbar navbar-expand-sm mb-5 bg-dark" id="navbar">
     <div class="container">
-        <a href="Registration.php" class="navbar-brand text-white">Surf Turf</a>
+        <a href="index.php" class="navbar-brand text-white">Surf Turf</a>
 
         <div class="justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <div class="mr-4 mb-2">
-                    <a href="Registration.php" class="btn btn-outline-light nav-link">Register</a>
+                    <a href="index.php" class="btn btn-outline-light nav-link">Register</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -50,9 +43,9 @@ $name = $_SESSION['username'];
     <div class="row justify-content-end">
         <div style="background-color: black; opacity:75%; padding: 30px 30px 30px 30px; border-radius: 10px">
         <div class="col-md-12">
-            <p class="text-white">Don't have an account?<a href="Registration.php">Sign up now!</a></p>
+            <p class="text-white">Don't have an account?<a href="index.php">Sign up now!</a></p>
 
-            <form class="form" action="" method="POST">
+            <form class="form" action="login.php" method="POST">
                 <h4 class="topic">You are one step away, we can't wait!</h4>
                 <br>
 
