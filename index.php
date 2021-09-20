@@ -8,7 +8,7 @@ if(!$conn){
 
 
 
-if(isset($_REQUEST['firstname'])){
+if(isset($_REQUEST['username'])){
     //removes backlashes
     $firstname = stripslashes($_REQUEST['firstname']);
     $firstname = mysqli_real_escape_string($conn, $firstname);
@@ -25,7 +25,6 @@ if(isset($_REQUEST['firstname'])){
     $adults = stripslashes($_REQUEST['adults']);
     $adults = mysqli_real_escape_string($conn, $adults);
     $dob = date('m-d-Y');
-
 
     $userCheck = "SELECT * FROM  php_project_1 where username = '$username'";
     $query= mysqli_query($conn, $userCheck);
@@ -44,20 +43,21 @@ if(isset($_REQUEST['firstname'])){
         echo  'This email has been taken';
     }
 
-    else{
-        $register = "INSERT into `php_project_1` (firstname,lastname,username,email,password,kids,adults,date_of_birth) VALUES 
-('$firstname', '$lastname', '$username', '$email', '". md5($password) ."', '$kids', '$adults', '$dob')" ;
+    else {
+
+        $register = "INSERT into `php_project_1` (firstname,lastname,username,email,password,kids,adults,date_of_birth) VALUES
+('$firstname', '$lastname', '$username', '$email', '" . md5($password) . "', '$kids', '$adults', '$dob')";
         $regQuery = mysqli_query($conn, $register);
-        if ($regQuery) {
-            session_start();
+        if ($regQuery){
             $_POST['username'] = $_SESSION['username'];
             header('Location:login.php');
         }
+
+        else{
+            echo 'invalid entries';
+        }
+
     }
-
-
-
-
 
 }
 
@@ -80,7 +80,7 @@ if(isset($_REQUEST['firstname'])){
 
 <nav class="navbar navbar-expand-sm mb-5 justify-content-center bg-dark" id="navbar">
     <div class="container">
-        <a href="Registration.php" class="navbar-brand text-white" >Surf Turf</a>
+        <a href="index.php" class="navbar-brand text-white" >Surf Turf</a>
 
         <div class="justify-content-end">
             <ul class="navbar-nav">
@@ -132,7 +132,7 @@ if(isset($_REQUEST['firstname'])){
                 <p class="text-white">Already have an account? <a href="login.php">Log right in!</a></p>
 
 
-                <form class="form" action="Registration.php" method="POST">
+                <form class="form" action="index.php" method="POST">
                     <h4 class="topic">Let's get you signed up real quick!</h4>
                     <br>
 
